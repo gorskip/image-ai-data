@@ -40,7 +40,7 @@ public class ImageUtil {
 
     public static BufferedImage toGreyScale(BufferedImage colorImage) {
         log.info("Converting to grey scale...");
-        BufferedImage image = new BufferedImage(colorImage.getWidth(), colorImage.getWidth(),
+        BufferedImage image = new BufferedImage(colorImage.getWidth(), colorImage.getHeight(),
                 BufferedImage.TYPE_BYTE_GRAY);
         Graphics g = image.getGraphics();
         g.drawImage(colorImage, 0, 0, null);

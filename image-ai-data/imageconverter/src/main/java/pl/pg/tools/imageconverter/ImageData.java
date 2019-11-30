@@ -28,7 +28,6 @@ public class ImageData {
 
     public ImageData toGreyScale(boolean greyscale) {
         if(greyscale) {
-
             this.image = ImageUtil.toGreyScale(this.image);
         }
         return this;
