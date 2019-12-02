@@ -3,6 +3,7 @@ package pl.pg.tools.imageconverter;
 import pl.pg.tools.imageconverter.util.ImageUtil;
 
 import java.awt.image.BufferedImage;
+import java.nio.file.Path;
 
 public class MatrixData {
 
@@ -12,8 +13,8 @@ public class MatrixData {
         this.matrix = matrix;
     }
 
-    public BufferedImage createImage() {
-        return ImageUtil.createImage(matrix);
+    public void createImage(Path path) {
+        ImageUtil.createImage(matrix, path);
     }
 
 

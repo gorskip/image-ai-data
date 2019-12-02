@@ -1,11 +1,10 @@
 package pl.pg.tools.imageconverter.util;
 
+import com.univocity.parsers.csv.CsvParser;
+import com.univocity.parsers.csv.CsvParserSettings;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
-import pl.pg.tools.imageconverter.exception.CannotCompressImage;
-import pl.pg.tools.imageconverter.exception.CannotReadImageBytes;
-import pl.pg.tools.imageconverter.exception.CannotReadImageFile;
-import pl.pg.tools.imageconverter.exception.CannotWriteImage;
+import pl.pg.tools.imageconverter.exception.*;
 import sun.awt.image.ToolkitImage;
 
 import javax.imageio.IIOImage;
@@ -90,6 +89,7 @@ public class ImageUtil {
         }
     }
 
+
     public static BufferedImage buildImage(String[][] matrix) {
         int width = matrix.length;
         int height = matrix[0].length;
@@ -100,5 +100,9 @@ public class ImageUtil {
             }
         }
         return image;
+    }
+
+    public static void createImage(String[][] colorsMatrix, Path path) {
+        write(path, buildImage(colorsMatrix));
     }
 }
