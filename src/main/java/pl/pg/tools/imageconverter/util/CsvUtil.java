@@ -1,10 +1,7 @@
 package pl.pg.tools.imageconverter.util;
 
-import com.univocity.parsers.csv.CsvParser;
-import com.univocity.parsers.csv.CsvParserSettings;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.FileUtils;
@@ -12,14 +9,11 @@ import pl.pg.tools.imageconverter.exception.CannotReadCsv;
 import pl.pg.tools.imageconverter.exception.CannotReadFile;
 import pl.pg.tools.imageconverter.exception.CannotWriteCsv;
 
-import java.awt.*;
 import java.io.*;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 public class CsvUtil {
@@ -88,31 +82,8 @@ public class CsvUtil {
         } catch (IOException e) {
             throw new CannotReadCsv(path.toString(), e);
         }
-//        int width = rawMatrix.size();
-//        int height = rawMatrix.get(0).size();
-//        String[][] matrix = new String[width][height];
-//        List<String[]> rows = rawMatrix.stream().map(array -> array.toArray(new String[0])).collect(Collectors.toList());
-//        for(int y = 0; y < height; y++){
-//            for(int x = 0; x < width; x++){
-//                matrix[x][y] = rows.get(y)[x];
-//            }
-//        }
-
     }
 
-    public static void read2(Path path) {
-        CsvParserSettings settings = new CsvParserSettings();
-//the file used in the example uses '\n' as the line separator sequence.
-//the line separator sequence is defined here to ensure systems such as MacOS and Windows
-//are able to process this file correctly (MacOS uses '\r'; and Windows uses '\r\n').
-        settings.getFormat().setLineSeparator("\n");
-
-// creates a CSV parser
-        CsvParser parser = new CsvParser(settings);
-
-// parses all rows in one go.
-
-    }
 
     private static Reader getReader(Path path) {
         try {

@@ -1,23 +1,15 @@
 package pl.pg.tools.imageconverter.util;
 
-import com.univocity.parsers.csv.CsvParser;
-import com.univocity.parsers.csv.CsvParserSettings;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import pl.pg.tools.imageconverter.exception.*;
-import sun.awt.image.ToolkitImage;
-
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
 import javax.imageio.ImageWriteParam;
 import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.FilteredImageSource;
-import java.awt.image.ImageFilter;
-import java.awt.image.ImageProducer;
 import java.io.*;
 import java.nio.file.Path;
 
